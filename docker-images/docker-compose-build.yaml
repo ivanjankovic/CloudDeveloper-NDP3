@@ -4,15 +4,15 @@ services:
     build:
       context: .
     image: jankovic/reverseproxy 
-  backend_user:
-    build:
-      context: ../restapi-user
-    image: jankovic/restapi-user
-  backend_feed:
-    build:
-      context: ../restapi-feed  
-    image: jankovic/restapi-feed
-  frontend:
-    build:
-      context: ../frontend  
-    image: jankovic/frontend:local
+  # backend_user:
+  #   build:
+  #     context: ../restapi-user
+  #   image: jankovic/restapi-user
+  # backend_feed:
+  #   build:
+  #     context: ../restapi-feed  
+  #   image: jankovic/restapi-feed
+  # frontend:
+  #   build:
+  #     context: ../frontend  
+  #   image: jankovic/frontend:local
