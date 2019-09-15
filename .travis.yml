@@ -16,4 +16,8 @@ before_install:
   - sudo mv ./kubectl /usr/local/bin/kubectl
 
 install:
-  - echo 'Hello Travis CI!'
+  - docker-compose -f docker-compose-build.yaml build --parallel
+
+  # - echo "$DOCKER_HUB_PASSWORD" | docker login -u "$DOCKER_HUB_ID" --password-stdin
+
+  # - docker-compose -f docker-compose-build.yaml push
