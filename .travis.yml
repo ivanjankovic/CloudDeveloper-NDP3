@@ -21,4 +21,4 @@ install:
   # - echo "$DOCKER_HUB_PASSWORD" | docker login -u "$DOCKER_HUB_ID" --password-stdin
 
   # - docker-compose -f udacity-c3-deployment/docker/docker-compose-build.yaml push
-  - kubectl apply -f deployment
+  - kubectl --kubeconfig=terraform-kubeone/c3-kubernetes-kubeconfig apply -f deployment
