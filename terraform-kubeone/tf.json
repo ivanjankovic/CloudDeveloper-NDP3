@@ -1,0 +1,173 @@
+{
+  "kubeone_api": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "endpoint": "string"
+      }
+    ],
+    "value": {
+      "endpoint": "c3-kubernetes-api-lb-0d08414a388ef588.elb.us-east-1.amazonaws.com"
+    }
+  },
+  "kubeone_hosts": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "control_plane": [
+          "object",
+          {
+            "cloud_provider": "string",
+            "cluster_name": "string",
+            "hostnames": [
+              "tuple",
+              [
+                "string",
+                "string",
+                "string"
+              ]
+            ],
+            "private_address": [
+              "tuple",
+              [
+                "string",
+                "string",
+                "string"
+              ]
+            ],
+            "public_address": [
+              "tuple",
+              [
+                "string",
+                "string",
+                "string"
+              ]
+            ],
+            "ssh_agent_socket": "string",
+            "ssh_port": "number",
+            "ssh_private_key_file": "string",
+            "ssh_user": "string"
+          }
+        ]
+      }
+    ],
+    "value": {
+      "control_plane": {
+        "cloud_provider": "aws",
+        "cluster_name": "c3-kubernetes",
+        "hostnames": [
+          "ip-172-31-4-20.ec2.internal",
+          "ip-172-31-95-44.ec2.internal",
+          "ip-172-31-22-134.ec2.internal"
+        ],
+        "private_address": [
+          "172.31.4.20",
+          "172.31.95.44",
+          "172.31.22.134"
+        ],
+        "public_address": [
+          "3.91.19.30",
+          "34.205.63.221",
+          "54.90.247.135"
+        ],
+        "ssh_agent_socket": "env:SSH_AUTH_SOCK",
+        "ssh_port": 22,
+        "ssh_private_key_file": "",
+        "ssh_user": "ubuntu"
+      }
+    }
+  },
+  "kubeone_workers": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "c3-kubernetes-pool1": [
+          "object",
+          {
+            "providerSpec": [
+              "object",
+              {
+                "cloudProviderSpec": [
+                  "object",
+                  {
+                    "ami": "string",
+                    "availabilityZone": "string",
+                    "diskIops": "number",
+                    "diskSize": "number",
+                    "diskType": "string",
+                    "instanceProfile": "string",
+                    "instanceType": "string",
+                    "region": "string",
+                    "securityGroupIDs": [
+                      "tuple",
+                      [
+                        "string"
+                      ]
+                    ],
+                    "subnetId": "string",
+                    "tags": [
+                      "object",
+                      {
+                        "c3-kubernetes-workers": "string"
+                      }
+                    ],
+                    "vpcId": "string"
+                  }
+                ],
+                "operatingSystem": "string",
+                "operatingSystemSpec": [
+                  "object",
+                  {
+                    "distUpgradeOnBoot": "bool"
+                  }
+                ],
+                "sshPublicKeys": [
+                  "tuple",
+                  [
+                    "string"
+                  ]
+                ]
+              }
+            ],
+            "replicas": "number"
+          }
+        ]
+      }
+    ],
+    "value": {
+      "c3-kubernetes-pool1": {
+        "providerSpec": {
+          "cloudProviderSpec": {
+            "ami": "ami-024582e76075564db",
+            "availabilityZone": "us-east-1a",
+            "diskIops": 500,
+            "diskSize": 50,
+            "diskType": "gp2",
+            "instanceProfile": "c3-kubernetes-host",
+            "instanceType": "t3.small",
+            "region": "us-east-1",
+            "securityGroupIDs": [
+              "sg-0b64bd73136611e8c"
+            ],
+            "subnetId": "subnet-ca99bcad",
+            "tags": {
+              "c3-kubernetes-workers": "pool1"
+            },
+            "vpcId": "vpc-83d4a5f9"
+          },
+          "operatingSystem": "ubuntu",
+          "operatingSystemSpec": {
+            "distUpgradeOnBoot": false
+          },
+          "sshPublicKeys": [
+            "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC6vzt4fYnzoN8Ik3NeCJdf55ei9P1O+TuwKlBi8LDwo8HlDWzDe4P67hJZZFCPAphxIzn2ovjCr8ulRLi2Z6xFYVjFeL5S8085EBltIjcOJc/GxnxHGUU+pvXgMJV10pLH5AXA88TXaSW3Y9H8KvGx3Hc01cclNGz9yJ3afNDde1m0nIZbFPsILwe73XP4z19ret0ZgUoV05joIqiM7awJ4sD2t7JIdoZzYlOpYX9dLiQwOkfonjiuq21q4aWraKvPizbOJRkQFka4VEjnjzr4cmROmlWzA+2c87w8Cj0VG7aUlZV+dH6ycUXIjNETrjHZuN+FKB7N2ZUgWqHJS7EOgF/r62mQmuuuqCgipse84wLamJ5lemdWBIRe3GsjJuOmz7IabY38wacsQXcGG8NOgrNUrz4HyrsqtvjEx/GjYvXHygOINrjq7W/WjbCr9aEyW5L8UUVRdsNo7mq0AoZOG8XVWTROC+nKlfUnGEll1mVPCOeFejpM5KKrl7OMMurL5f5pPccoFRpDsnGZLy2AjMcCFeuFzxBS21ROGa4MKD4ysOb1+YjGNuyQg07U/wyohJ0lZ25HsF9oZxhe4fVOph/dX+oMT7iLR/fUSlOXxrt0cXgLLztFCcIL/aeK4ZQQFt+i1VpEysCdmdoY0JNq12h1aimznuZzd35+pkOMlQ== jankoemail@gmail.com"
+          ]
+        },
+        "replicas": 1
+      }
+    }
+  }
+}
