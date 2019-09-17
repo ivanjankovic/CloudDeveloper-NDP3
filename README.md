@@ -51,18 +51,7 @@ push images to DockerHub:
 docker-compose -f docker-compose-build.yaml push
 ```
 
-Docker image can be build
-The app can be containerized
-Docker-compose file available for running containers locally
-Screenshot of the terminal running containers
-The applications runs in a container without errors
-All services are connecting properly with S3 and DB
-There are instruction on how to upload images
-The project images are available on DockerHub
-Screenshot of images in DockerHub
-
-### Run App on Cloud - App Container Kuernetes Cluster AWS:
-___
+## Run App on Cloud - App Container Kuernetes Cluster AWS:
 
 #### Provisioning & Cluster Setup:
 ```
@@ -81,7 +70,7 @@ kubectl scale -n kube-system machinedeployment/<name> --replicas=2
 #### Deployment:
 
 resaurces:  
-[Convert your secret data to a base-64 representation]()
+[Convert your secret data to a base-64 representation][1]
 
 ```
 kubectl apply -f deployment
@@ -93,12 +82,6 @@ access app:
 ```
 http://localhost:8100
 ```
-The project can be deployed to a kubernetes cluster
-Thre are instructions on how to deploy to a kubernetes cluster
-The application runs on a cluster in the cloud
-The students can deploy a new version of the application without downtime
-Two versions of the same app can run at the same and service traffic
-The application is monitored by Amazon CloudWatch
 
 CI/DC, Github & Code Quality:
 The project demonstrates an understanding and use of CI/CD and Github
@@ -113,4 +96,5 @@ make sure you remove secrets and env variables before submission
 
 [Project Rubric]()  
 [Starter Repository]()
-```
+
+[1]:https://kubernetes.io/docs/tasks/inject-data-application/distribute-credentials-secure/#convert-your-secret-data-to-a-base-64-representation
