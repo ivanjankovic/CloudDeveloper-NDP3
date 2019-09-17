@@ -11,20 +11,19 @@ Required Accounts:
 - Amazon Web Services
 - DockerHub
 
-### Run App Localy in Container:
-
-
 Get Repository:
-```
 
+```
 git clone
 cd into repository folder
-
 ```
+
+### Run App Localy in Container:
+___
 
 #### Create Images & Containers:
 
-build images:
+#### build images:
 
 ```
 cd docker-images
@@ -33,25 +32,21 @@ docker images
 ```
 
 start app locally:
-
 ```
 docker-compose up
 ```
 
 access app:
-
 ```
 http://localhost:8100
 ```
 
 stop app:
-
 ```
 docker-compose down
 ```
 
 push images to DockerHub:
-
 ```
 docker-compose -f docker-compose-build.yaml push
 ```
@@ -66,8 +61,11 @@ There are instruction on how to upload images
 The project images are available on DockerHub
 Screenshot of images in DockerHub
 
-Provisioning & Nodes Cluster Setup:
-terminal:
+### Run App on Cloud - App Container Kuernetes Cluster AWS:
+___
+
+#### Provisioning & Cluster Setup:
+```
 cd terraform-kubeone
 terraform init
 terraform plan
@@ -79,32 +77,28 @@ export KUBECONFIG=$PWD/<cluster_name>-kubeconfig
 kubectl get nodes
 kubectl get -n kube-system machinedeployment
 kubectl scale -n kube-system machinedeployment/<name> --replicas=2
+```
+#### Deployment:
 
-Deployment:
-info:
-Convert your secret data to a base-64 representation
-terminal:
+resaurces:  
+[Convert your secret data to a base-64 representation]()
+
+```
 kubectl apply -f deployment
 kubectl port-forward service/reverseproxy 8080:8080
 kubectl port-forward service/frontend 8100:8100
+```
+
 access app:
+```
 http://localhost:8100
-
-The application runs on a cluster in the cloud
+```
 The project can be deployed to a kubernetes cluster
-how to deploy to a kubernetes cluster
-
-The app can be upgraded via rolling-update
+Thre are instructions on how to deploy to a kubernetes cluster
+The application runs on a cluster in the cloud
 The students can deploy a new version of the application without downtime
-how do i test this, how do show this
-
-A/B deployment of the application
 Two versions of the same app can run at the same and service traffic
-how do i test this, how do show this
-
-Monitoring
 The application is monitored by Amazon CloudWatch
-how do i test this, how do show this
 
 CI/DC, Github & Code Quality:
 The project demonstrates an understanding and use of CI/CD and Github
@@ -117,6 +111,6 @@ A link to the repository has been provided for reviewers.
 
 make sure you remove secrets and env variables before submission
 
-Project Rubric
-Starter Repository
+[Project Rubric]()  
+[Starter Repository]()
 ```
