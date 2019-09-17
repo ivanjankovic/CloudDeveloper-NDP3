@@ -29,14 +29,17 @@ docker-compose -f docker-compose-build.yaml build --parallel
 docker images
 ```
 
-start app locally:
+start app:
 ```
 docker-compose up
 ```
 
 access app: [http://localhost:8100](http://localhost:8100)
 
-stop app: `docker-compose down`
+stop app:
+```
+docker-compose down
+```
 
 #### push images to DockerHub:
 ```
