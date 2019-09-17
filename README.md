@@ -1,7 +1,6 @@
 
 
 Setup:
-- Required
 - AWS CLI
 - Docker
 - Kubectl
@@ -88,16 +87,6 @@ resaurces:
 
 ## CI/CD:
 
-CI/DC, Github & Code Quality:
-The project demonstrates an understanding and use of CI/CD and Github
-All project code is stored in a GitHub repository
-The README file includes an introduction how to setup project
-It explains the main building blocks
-The student uses a CI tool to build the application.
-A CD tool is in place to deploy new version of the app automatically to production.
-A link to the repository has been provided for reviewers.
-
-make sure you remove secrets and env variables before submission
 
 [Project Rubric]()  
 [Starter Repository]()
