@@ -29,9 +29,11 @@ docker-compose -f docker-compose-build.yaml build --parallel
 docker images
 ```
 
-start app locally: `docker-compose up`
+start app locally:
+```docker-compose up```
 
-access app: `http://localhost:8100`
+access app:
+```http://localhost:8100```
 
 stop app: `docker-compose down`
 
@@ -63,11 +65,12 @@ kubectl scale -n kube-system machinedeployment/<name> --replicas=2
 
 #### Deployment:
 
-resaurces:  
-[Convert your secret data to a base-64 representation][1]
-
 ```
 kubectl apply -f deployment
+```
+
+port forward:
+```
 kubectl port-forward service/reverseproxy 8080:8080
 kubectl port-forward service/frontend 8100:8100
 ```
@@ -76,6 +79,9 @@ access app:
 ```
 http://localhost:8100
 ```
+
+resaurces:  
+[Convert your secret data to a base-64 representation][1]
 
 ## CI/CD:
 
