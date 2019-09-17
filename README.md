@@ -18,48 +18,41 @@ git clone
 cd into repository folder
 ```
 
-### Run App Localy in Container:
-___
+## Run App Localy in a Container:
 
 #### Create Images & Containers:
 
 #### build images:
-
 ```
 cd docker-images
 docker-compose -f docker-compose-build.yaml build --parallel
 docker images
 ```
 
-start app locally:
-```
-docker-compose up
-```
+start app locally: `docker-compose up`
 
-access app:
-```
-http://localhost:8100
-```
+access app: `http://localhost:8100`
 
-stop app:
-```
-docker-compose down
-```
+stop app: `docker-compose down`
 
-push images to DockerHub:
+#### push images to DockerHub:
 ```
 docker-compose -f docker-compose-build.yaml push
-```
+```  
 
 ## Run App on Cloud - App Container Kuernetes Cluster AWS:
 
-#### Provisioning & Cluster Setup:
+#### Provisioning:
 ```
 cd terraform-kubeone
 terraform init
 terraform plan
 terraform apply
 terraform output -json > tf.json
+```
+
+#### Cluster Setup:
+```
 kubeone config print > config.yaml
 kubeone install config.yaml --tfjson tf.json
 export KUBECONFIG=$PWD/<cluster_name>-kubeconfig
@@ -67,6 +60,7 @@ kubectl get nodes
 kubectl get -n kube-system machinedeployment
 kubectl scale -n kube-system machinedeployment/<name> --replicas=2
 ```
+
 #### Deployment:
 
 resaurces:  
@@ -82,6 +76,8 @@ access app:
 ```
 http://localhost:8100
 ```
+
+## CI/CD:
 
 CI/DC, Github & Code Quality:
 The project demonstrates an understanding and use of CI/CD and Github
