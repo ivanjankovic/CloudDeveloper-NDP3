@@ -30,10 +30,14 @@ docker images
 ```
 
 start app locally:
-```docker-compose up```
+```
+docker-compose up
+```
 
 access app:
-```http://localhost:8100```
+```
+http://localhost:8100
+```
 
 stop app: `docker-compose down`
 
@@ -75,7 +79,7 @@ kubectl port-forward service/reverseproxy 8080:8080
 kubectl port-forward service/frontend 8100:8100
 ```
 
-access app:
+access app: [http://localhost:8100](http://localhost:8100)
 ```
 http://localhost:8100
 ```
