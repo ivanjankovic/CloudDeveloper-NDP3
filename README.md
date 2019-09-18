@@ -40,11 +40,13 @@ stop app:
 ```
 docker-compose down
 ```
+<img width="600" src="https://user-images.githubusercontent.com/13816039/65101928-92576180-d997-11e9-87d1-bfab1e837a93.png">
 
 #### push images to DockerHub:
 ```
 docker-compose -f docker-compose-build.yaml push
 ```  
+<img width="600" src="https://user-images.githubusercontent.com/13816039/65101964-ad29d600-d997-11e9-82aa-c05340593ce4.png">
 
 ## Run App on Cloud - App Container Kuernetes Cluster AWS:
 
@@ -72,6 +74,7 @@ kubectl scale -n kube-system machinedeployment/<name> --replicas=2
 ```
 kubectl apply -f deployment
 ```
+<img width="483" src="https://user-images.githubusercontent.com/13816039/65102002-cc286800-d997-11e9-938f-55c2dd89ad26.png">
 
 port forward:
 ```
@@ -87,6 +90,10 @@ resaurces:
 
 ## CI/CD:
 
+Repository is connected to Travis CI service. When you run a build, Travis CI clones your GitHub repository into a brand-new virtual environment, and carries out a series of tasks to build and test your code. If one or more of those tasks fail, the build is considered broken. If none of the tasks fail, the build is considered passed and Travis CI can deploy your code to a web server or application host.
+
+specific for this repository travi.yml file is configured to build images, push them to DockerHub and deploy changes to AWS  
+
 ## Clean Up:
 
 ```
@@ -98,7 +105,7 @@ docker system prune -a
 ```
 
 [Project Rubric]()  
-[Starter Repository]()
+[Starter Repository]() . 
 [Cost & Uasge][2]
 
 
