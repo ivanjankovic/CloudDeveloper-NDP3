@@ -16,6 +16,7 @@ before_install:
   - sudo mv ./kubectl /usr/local/bin/kubectl
 
 install:
+  - echo 'hello'
   # - docker-compose -f docker/docker-compose-build.yaml build --parallel
 
   # - echo "$DOCKER_HUB_PASSWORD" | docker login -u "$DOCKER_HUB_ID" --password-stdin

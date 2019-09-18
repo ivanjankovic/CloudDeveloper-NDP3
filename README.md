@@ -40,13 +40,13 @@ stop app:
 ```
 docker-compose down
 ```
-<img width="600" src="https://user-images.githubusercontent.com/13816039/65101928-92576180-d997-11e9-87d1-bfab1e837a93.png">
+<img width="700" src="https://user-images.githubusercontent.com/13816039/65101928-92576180-d997-11e9-87d1-bfab1e837a93.png">
 
 #### push images to DockerHub:
 ```
 docker-compose -f docker-compose-build.yaml push
 ```  
-<img width="600" src="https://user-images.githubusercontent.com/13816039/65101964-ad29d600-d997-11e9-82aa-c05340593ce4.png">
+<img width="700" src="https://user-images.githubusercontent.com/13816039/65101964-ad29d600-d997-11e9-82aa-c05340593ce4.png">
 
 ## Run App on Cloud - App Container Kuernetes Cluster AWS:
 
