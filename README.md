@@ -92,7 +92,7 @@ resaurces:
 
 Repository is connected to Travis CI service. When you run a build, Travis CI clones your GitHub repository into a brand-new virtual environment, and carries out a series of tasks to build and test your code. If one or more of those tasks fail, the build is considered broken. If none of the tasks fail, the build is considered passed and Travis CI can deploy your code to a web server or application host.
 
-specific for this repository travi.yml file is configured to build images, push them to DockerHub and deploy changes to AWS  
+Root of repository has travis.yml file which is configured to build images, push them to DockerHub and deploy changes to AWS  
 
 ## Clean Up:
 
