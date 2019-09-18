@@ -13,8 +13,8 @@ Required Accounts:
 Get Repository:
 
 ```
-git clone
-cd into repository folder
+git clone git@github.com:ivanjankovic/cloud-developer-p3.git
+cd cloud-developer-p3
 ```
 
 ## Run App Localy in a Container:
@@ -23,8 +23,8 @@ cd into repository folder
 
 #### build images:
 ```
-cd docker-images
-docker-compose -f docker-compose-build.yaml build --parallel
+cd docker
+docker-compose -f docker-compose-build.yaml build
 docker images
 ```
 
@@ -50,7 +50,7 @@ docker-compose -f docker-compose-build.yaml push
 
 #### Provisioning:
 ```
-cd terraform-kubeone
+cd kubernetes
 terraform init
 terraform plan
 terraform apply
@@ -87,8 +87,22 @@ resaurces:
 
 ## CI/CD:
 
+## Clean Up:
+
+```
+kubectl delete -f deployment
+cd kubernetes
+kubeone reset config.yaml --tfjson tf.json
+terraform destroy
+docker system prune -a
+```
 
 [Project Rubric]()  
 [Starter Repository]()
+[Cost & Uasge][2]
+
+
+
 
 [1]:https://kubernetes.io/docs/tasks/inject-data-application/distribute-credentials-secure/#convert-your-secret-data-to-a-base-64-representation
+[2]:https://console.aws.amazon.com/cost-reports/home?#/custom?groupBy=Service&hasBlended=false&hasAmortized=false&excludeDiscounts=true&excludeTaggedResources=false&timeRangeOption=Custom&granularity=Daily&reportName=&reportType=CostUsage&isTemplate=true&startDate=2019-08-01&endDate=2019-09-17&filter=%5B%7B"dimension":"RecordType","values":%5B"Refund","Credit"%5D,"include":false,"children":null%7D%5D&forecastTimeRangeOption=None&usageAs=usageQuantity&chartStyle=Stack

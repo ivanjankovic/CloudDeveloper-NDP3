@@ -13,7 +13,7 @@ spec:
         api: external        
     spec:
       containers:
-      - image: jankovic/frontend
+      - image: jankovic/frontend:local
         name: frontend
         imagePullPolicy: Always          
         ports:
