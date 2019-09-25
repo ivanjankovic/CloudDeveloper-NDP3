@@ -26,4 +26,4 @@ install:
   # - docker-compose -f docker/docker-compose-build.yaml push
 
   #  deploy to AWS
-  - kubectl --kubeconfig=terraform-kubeone/c3-kubernetes-kubeconfig apply -f deployment
+  - kubectl --kubeconfig=kubernetes/c3-kubernetes-kubeconfig apply -f deployment
