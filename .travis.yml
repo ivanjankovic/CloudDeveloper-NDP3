@@ -17,13 +17,13 @@ before_install:
 
 install:
   # create images
-  - docker-compose -f docker/docker-compose-build.yaml build --parallel
+  # - docker-compose -f docker/docker-compose-build.yaml build
 
   # login to DockerHub
-  - echo "$DOCKER_HUB_PASSWORD" | docker login -u "$DOCKER_HUB_ID" --password-stdin
+  # - echo "$DOCKER_HUB_PASSWORD" | docker login -u "$DOCKER_HUB_ID" --password-stdin
 
   #  upload images
-  - docker-compose -f docker/docker-compose-build.yaml push
+  # - docker-compose -f docker/docker-compose-build.yaml push
 
   #  deploy to AWS
   - kubectl --kubeconfig=kubernetes/c3-kubernetes-kubeconfig apply -f deployment
