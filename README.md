@@ -40,13 +40,13 @@ stop app:
 ```
 docker-compose down
 ```
-<img width="700" src="https://user-images.githubusercontent.com/13816039/65101928-92576180-d997-11e9-87d1-bfab1e837a93.png">
+<img width="600" src="https://user-images.githubusercontent.com/13816039/65101928-92576180-d997-11e9-87d1-bfab1e837a93.png">
 
 #### push images to DockerHub:
 ```
 docker-compose -f docker-compose-build.yaml push
 ```  
-<img width="700" src="https://user-images.githubusercontent.com/13816039/65101964-ad29d600-d997-11e9-82aa-c05340593ce4.png">
+<img width="800" src="https://user-images.githubusercontent.com/13816039/65101964-ad29d600-d997-11e9-82aa-c05340593ce4.png">
 
 ## Run App on Cloud - App Container Kuernetes Cluster AWS:
 
@@ -62,7 +62,7 @@ terraform output -json > tf.json
 #### Cluster Setup:
 ```
 kubeone config print > config.yaml
-kubeone install config.yaml --tfjson tf.json
+kubeone install config.yaml --tfjson tf.json // if you get handshake error run ssh-add
 export KUBECONFIG=$PWD/<cluster_name>-kubeconfig
 kubectl get nodes
 kubectl get -n kube-system machinedeployment
@@ -72,7 +72,9 @@ kubectl scale -n kube-system machinedeployment/<name> --replicas=2
 #### Deployment:
 
 ```
+cd ..
 kubectl apply -f deployment
+kubectl get deployment
 ```
 <img width="483" src="https://user-images.githubusercontent.com/13816039/65102002-cc286800-d997-11e9-938f-55c2dd89ad26.png">
 
