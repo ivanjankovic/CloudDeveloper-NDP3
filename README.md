@@ -96,11 +96,11 @@ Repository is connected to Travis CI service. When you run a build, Travis CI cl
 
 Root of repository has travis.yml file which is configured to build images, push them to DockerHub and deploy changes to AWS  
 
-<img width="1059" alt="Screen Shot 2019-09-24 at 8 35 45 PM" src="https://user-images.githubusercontent.com/13816039/65649831-251a8080-dfd6-11e9-9585-28430f3f12f4.png">
+<img width="800" src="https://user-images.githubusercontent.com/13816039/65649831-251a8080-dfd6-11e9-9585-28430f3f12f4.png">
 
-## Cloudwatch:
+## CloudWatch:
 
-<img width="1080" alt="Screen Shot 2019-09-25 at 8 11 27 PM" src="https://user-images.githubusercontent.com/13816039/65649693-a02f6700-dfd5-11e9-8fba-a83ebee0bf69.png">
+<img width="800" src="https://user-images.githubusercontent.com/13816039/65649693-a02f6700-dfd5-11e9-8fba-a83ebee0bf69.png">
 
 ## Clean Up:
 
